@@ -1,13 +1,64 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* End of Browser Reset */ 
+
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+   /* box-sizing: border-box;*/ 
+    border: 1px red solid;
+    /*padding: 0;*/ 
+    /*margin: 0;*/ 
 }
 
 body {
     background-color: #d9dcd6;
 }
-
+/* background color for the webpage*/ 
 .header {
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -40,7 +91,7 @@ body {
     display: inline-block;
     margin-left: 25px;
 }
-
+/* Header and header tags for main menu to links*/ 
 a {
     color: #ffffff;
     text-decoration: none;
@@ -85,7 +136,7 @@ p {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #2589bd;
 }
-
+/* menu styles start*/ 
 .benefit-lead {
     margin-bottom: 32px;
     color: #ffffff;
@@ -115,7 +166,7 @@ p {
     margin-bottom: 10px;
     text-align: center;
 }
-
+/* h3 tags for side options*/ 
 .benefit-lead img {
     display: block;
     margin: 10px auto;
@@ -133,7 +184,7 @@ p {
     margin: 10px auto;
     max-width: 150px;
 }
-
+/* Image style*/ 
 .search-engine-optimization {
     margin-bottom: 20px;
     padding: 50px;
@@ -160,7 +211,7 @@ p {
     background-color: #0072bb;
     color: #ffffff;
 }
-
+/* Menu styles for background and font bottoms*/ 
 .search-engine-optimization img {
     max-height: 200px;
 }
@@ -172,7 +223,7 @@ p {
 .social-media-marketing img {
     max-height: 200px;
 }
-
+/* Image max height*/ 
 .search-engine-optimization h2 {
     margin-bottom: 20px;
     font-size: 36px;
@@ -198,3 +249,4 @@ p {
 .footer h2 {
     font-size: 20px;
 }
+/*Main Footer font size*/ 
