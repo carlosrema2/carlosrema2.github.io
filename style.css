@@ -27,4 +27,6 @@
   }
   img {
     float: left;
+    clear: left;
   }
+  
