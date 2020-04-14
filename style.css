@@ -1,0 +1,26 @@
+.body {
+    background-color:transparent;
+  }
+  .footer1{
+    background-color:grey;
+    color: honeydew;
+    text-align: center;
+  }
+.Name{
+    background-color: lightseagreen;
+    color: honeydew;
+    text-align: center;
+    font-size: x-large;
+  }
+  .card{
+    background-color: whitesmoke;
+  }
+  .about{
+    color: lightseagreen;
+  }
+  .gentext{
+      color: gray;
+  }
+  .bottomsend{
+    background-color: lightseagreen;
+  }
