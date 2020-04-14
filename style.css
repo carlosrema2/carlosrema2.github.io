@@ -25,8 +25,30 @@
   .bottomsend{
     background-color: lightseagreen;
   }
-  img {
+  .img {
     float: left;
     clear: left;
   }
-  
+  .mrgP {
+    margin: 20px 10px 10px 10px;
+  }
+
+  html {
+    margin: 40px auto;
+    text-align: center;
+  }
+    .btn-linkedin {
+      background: #0E76A8;
+      border-radius: 0;
+      color: #fff;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #084461;
+    }
+    .btn-linkedin:link, .btn-linkedin:visited {
+      color: #fff;
+    }
+    .btn-linkedin:active, .btn-linkedin:hover {
+      background: #084461;
+      color: #fff;
+    }
