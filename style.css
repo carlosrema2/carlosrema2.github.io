@@ -1,4 +1,4 @@
-.body {
+body {
     background-color:transparent;
   }
   .footer1{
@@ -11,6 +11,7 @@
     color: honeydew;
     text-align: center;
     font-size: x-large;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
   }
   .card{
     background-color: whitesmoke;
