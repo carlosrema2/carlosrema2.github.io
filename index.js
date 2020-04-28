@@ -10,9 +10,6 @@ defaultThemeColors["$header-color"] = "#652f80";
 defaultThemeColors["$header-background-color"] = "#CFD3D1";
 defaultThemeColors["$body-container-background-color"] = "#A7B2AB";
 
-
-
-
 Survey
     .StylesManager
     .applyTheme();
@@ -41,10 +38,10 @@ var json = {
                     name: "JSQuestion1",
                     title: "Which of the following is true about typeof operator in JavaScript?",
                     choices: [
-                        "The typeof is a unary operator that is placed before its single operand which can be of any type.", 
-                        "Its value is a string indicating the data type of the operand.", "Both of the above", "None of the above."
+                        "The typeof is a unary operator that is placed before its single operand which can be of any type", 
+                        "Its value is a string indicating the data type of the operand", "Both of the above", "None of the above"
                     ],
-                    correctAnswer: "Both of the above"
+                    correctAnswer: "Its value is a string indicating the data type of the operand"
                     
                    }
             ]
@@ -111,17 +108,17 @@ survey
             respounseToQuestion[3] = respounseToQuestion[3].slice(n);
             console.log(respounseToQuestion);
             
-            if(respounseToQuestion[0]== '"Both of the above"'){
+            if(respounseToQuestion[0]== '"Its value is a string indicating the data type of the operand"'){
                 $("#chartContainer").append("Your answer to question 1 :\n" + respounseToQuestion[0]+ ' is correct</br>');   
             };
             if(respounseToQuestion[1]== 'Local variable"'){
-                $("#chartContainer").append("Your answer to question 2 :\n" + respounseToQuestion[1]+ ' is correct</br>');
+                $("#chartContainer").append('Your answer to question 2 :\n"' + respounseToQuestion[1]+ ' is correct</br>');
             };
             if(respounseToQuestion[2]== 'charCodeAt()"'){
                 $("#chartContainer").append("Your answer to question 3 :\n" + respounseToQuestion[2]+ ' is correct</br>');
             };
             if(respounseToQuestion[3]== 'join()"}'){
-                $("#chartContainer").append("Your answer to question 4 :\n" + respounseToQuestion[3]+ ' is correct</br>');
+                $("#chartContainer").append('Your answer to question 4 :\n"' + respounseToQuestion[3]+ ' is correct</br>');
             };
     });
    
