@@ -106,19 +106,20 @@ survey
             respounseToQuestion[1] = respounseToQuestion[1].slice(n);
             respounseToQuestion[2] = respounseToQuestion[2].slice(n);
             respounseToQuestion[3] = respounseToQuestion[3].slice(n);
+            respounseToQuestion[3] = respounseToQuestion[3].replace('}', ''); 
             console.log(respounseToQuestion);
             
             if(respounseToQuestion[0]== '"Its value is a string indicating the data type of the operand"'){
-                $("#chartContainer").append("Your answer to question 1 :\n" + respounseToQuestion[0]+ ' is correct</br>');   
+                $("#chartContainer").append("-Your answer to the question; Which of the following is true about typeof operator in JavaScript?:\n" + respounseToQuestion[0]+ ' is correct</br></br>');   
             };
             if(respounseToQuestion[1]== 'Local variable"'){
-                $("#chartContainer").append('Your answer to question 2 :\n"' + respounseToQuestion[1]+ ' is correct</br>');
+                $("#chartContainer").append('-Your answer to the question; Which of the following type of variable takes precedence over other if names are same?:\n"' + respounseToQuestion[1]+ '" is correct</br></br>');
             };
             if(respounseToQuestion[2]== 'charCodeAt()"'){
-                $("#chartContainer").append("Your answer to question 3 :\n" + respounseToQuestion[2]+ ' is correct</br>');
+                $("#chartContainer").append("-Your answer to the question; Which of the following function of String object returns a number indicating the Unicode value of the character at the given index?:\n" + respounseToQuestion[2]+ ' is correct</br></br>');
             };
-            if(respounseToQuestion[3]== 'join()"}'){
-                $("#chartContainer").append('Your answer to question 4 :\n"' + respounseToQuestion[3]+ ' is correct</br>');
+            if(respounseToQuestion[3]== 'join()"'){
+                $("#chartContainer").append('-Your answer to the question; Which of the following function of Array object joins all elements of an array into a string?:\n"' + respounseToQuestion[3]+ ' is correct</br>');
             };
     });
    
