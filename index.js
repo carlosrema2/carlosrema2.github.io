@@ -15,7 +15,7 @@ Survey
     .applyTheme();
  
 
-var json = {
+var quiz = {
     title: "Java Script Quiz",
     showProgressBar: "bottom",
     showTimerPanel: "top",
@@ -91,7 +91,7 @@ var json = {
 };
 
 
-window.survey = new Survey.Model(json);
+window.survey = new Survey.Model(quiz);
 
 survey
     .onComplete
