@@ -1,40 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
-        </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="output" name="output"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
-        </div>
+    <head>
+        <title>JS and jQuery Quiz</title>
 
-        <b>Add a Different Password Length:</b> <input type="text" id="thelength" name="thelength" size=3 value="8">
-        <br/><br/>
+        <meta name="viewport" content="width=device-width"/>
+        <script src="https://unpkg.com/jquery"></script>
+        <script src="https://surveyjs.azureedge.net/1.7.3/survey.jquery.js"></script>
+        <link rel="stylesheet" href="https://surveyjs.azureedge.net/1.7.3/survey.css"/>
 
-        <div class="card-footer">
-       
-        <button id="generate" class="btn" onclick="writePassword();">Generate Password</button> 
-      
-      </div>
-      </div>
-    
-    <script src="script.js"></script>
-  </body>
+    </head>
+    <body>
+        
+        <div id="surveyElement" style="display:inline-block;width:100%;"></div>
+        <div id="surveyResult"></div>
+        <div id="chartContainer" style="color:#107133; font-size: x-large; margin-top: 100px;
+        margin-bottom: 100px;
+        margin-right: 100px;
+        margin-left: 100px;"></div>
+        <script type="text/javascript" src="./index.js"></script>
+
+    </body>
 </html>
