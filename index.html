@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>JS and jQuery Quiz</title>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6cbff65fb8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
 
-        <meta name="viewport" content="width=device-width"/>
-        <script src="https://unpkg.com/jquery"></script>
-        <script src="https://surveyjs.azureedge.net/1.7.3/survey.jquery.js"></script>
-        <link rel="stylesheet" href="https://surveyjs.azureedge.net/1.7.3/survey.css"/>
 
-    </head>
-    <body>
-        
-        <div id="surveyElement" style="display:inline-block;width:100%;"></div>
-        <div id="surveyResult"></div>
-        <div id="chartContainer" style="color:#107133; font-size: x-large; margin-left: 210px; margin-right: 100px; text-align: justify;"></div>
-        <script type="text/javascript" src="./index.js"></script>
+    <title>Work Day Scheduler</title>
+  </head>
+  <body>
+    <nav class="navbar fixed-top">
+      <div class="header-text">
+            <h1 class="navbar-title">Work Day Scheduler</h1>
+            <h2 class="navbar-subtitle" id="navbar-subtitle"></h2>
+      </div>
+    </nav>
+     <br><br><br><br><br>
+    
+     <div class="container plannerContainer" id="plannerContainer">
+       
+    </div>    
+    
+    <nav class="navbar fixed-bottom footer">
+        <div class="footer-text">Homework 5-Work Day Scheduler</div>
+    </nav>
 
-    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js" integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
+    <script src='./script.js'></script>
+  </body>
 </html>
