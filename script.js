@@ -1,136 +1,131 @@
-$(document).ready(function() {
 
-  var test = false;
-  var now = moment().format('MMMM Do YYYY');
-  var nowHour24 = moment().format('H');
-  var nowHour12 = moment().format('h');
-  if (test) {
-    nowHour24 = 13;
-    nowHour12 = 1;
-  }
+var city=""; 
+var url="";
+var APIkey="";
+var queryurl ="";
+var currenturl = "";
+var citiesDiv = document.getElementById("searched_cities_container");
 
-  var dateHeading = $('#navbar-subtitle');
-  dateHeading.text(now);
-  
-  var storedPlans = JSON.parse(localStorage.getItem("storedPlans"));
+var cities = []; 
+initial(); 
+listClicker(); 
+searchClicker(); 
 
+function initial(){
+    var saved_cities = JSON.parse(localStorage.getItem("cities"));
 
-
-  if (storedPlans !== null) {
-    planTextArr = storedPlans;
-  } else {
-    planTextArr = new Array(9);
-  }
-
-  var plannerDiv = $('#plannerContainer');
- 
-  plannerDiv.empty();
-
-  for (var hour = 9; hour <= 17; hour++) {
-
-    var index = hour - 9;
-
-    var rowDiv = $('<div>');
-    rowDiv.addClass('row');
-    rowDiv.addClass('plannerRow');
-    rowDiv.attr('hour-index',hour);
-  
-   
-    var col2TimeDiv = $('<div>');
-    col2TimeDiv.addClass('col-md-2');
-  
-    var timeBoxSpn = $('<span>');
-  
-    timeBoxSpn.attr('class','timeBox');
+    if (saved_cities !== null){
+        cities = saved_cities
+    }   
     
-    let displayHour = 0;
-    let ampm = "";
-    if (hour > 12) { 
-      displayHour = hour - 12;
-      ampm = "pm";
-    } else {
-      displayHour = hour;
-      ampm = "am";
+    renderButtons(); 
+}
+
+function storeCities(){
+    localStorage.setItem("cities", JSON.stringify(cities)); 
+}
+
+function renderButtons(){
+    citiesDiv.innerHTML = ""; 
+    if(cities == null){
+        return;
     }
-    
-    timeBoxSpn.text(`${displayHour} ${ampm}`);
-    
-    rowDiv.append(col2TimeDiv);
-    col2TimeDiv.append(timeBoxSpn);
- 
-    var dailyPlanSpn = $('<input>');
+    var unique_cities = [...new Set(cities)];
+    for(var i=0; i < unique_cities.length; i++){
+        var cityName = unique_cities[i]; 
 
-    dailyPlanSpn.attr('id',`input-${index}`);
-    dailyPlanSpn.attr('hour-index',index);
-    dailyPlanSpn.attr('type','text');
-    dailyPlanSpn.attr('class','dailyPlan');
+        var buttonEl = document.createElement("button");
+        buttonEl.textContent = cityName; 
+        buttonEl.setAttribute("class", "listbtn"); 
 
-  
-    dailyPlanSpn.val( planTextArr[index] );
-  
-    var col9IptDiv = $('<div>');
-    col9IptDiv.addClass('col-md-9');
-
-    
-    rowDiv.append(col9IptDiv);
-    col9IptDiv.append(dailyPlanSpn);
-  
-    var col1SaveDiv = $('<div>');
-    col1SaveDiv.addClass('col-md-1');
-
-    var saveBtn = $('<i>');
-    saveBtn.attr('id',`saveid-${index}`);
-    saveBtn.attr('save-id',index);
-    saveBtn.attr('class',"far fa-save saveIcon");
-    
-    rowDiv.append(col1SaveDiv);
-    col1SaveDiv.append(saveBtn);
-  
-    updateRowColor(rowDiv, hour);
-    
-    plannerDiv.append(rowDiv);
-  };
-
-  $(document).on('click','i', function(event) {
-    event.preventDefault();  
-
-    if (test) { console.log('click pta before '+ planTextArr); }
-
-    var index = $(this).attr('save-id');
-
-    var inputId = '#input-'+index;
-    var value = $(inputId).val();
-
-    planTextArr[index] = value;
-
-    // remove shawdow pulse class
-    $(`#saveid-${index}`).removeClass('shadowPulse');
-    localStorage.setItem("storedPlans", JSON.stringify(planTextArr));
-  });  
-  
-  // function to color save button on change of input
-  $(document).on('change','input', function(event) {
-    event.preventDefault();  
-
-    // neeed to check for save button
-
-    var i = $(this).attr('hour-index');
-
-    // add shawdow pulse class
-    $(`#saveid-${i}`).addClass('shadowPulse');
-  });
-  
-  function updateRowColor (hourRow,hour) { 
-
-    if ( hour < nowHour24) {
-      if (test) { console.log("lessThan"); }
-      hourRow.css("background-color","lightgrey")
-    } else if ( hour > nowHour24) {
-      if (test) { console.log("greaterthan"); }
-      hourRow.css("background-color","lightgreen")
-    } else {
-      if (test) { console.log("eqaul"); }
-      hourRow.css("background-color","tomato")
+        citiesDiv.appendChild(buttonEl);
+        listClicker();
+      }
     }
-  };
-});
+
+function listClicker(){
+$(".listbtn").on("click", function(event){
+    console.log("anybody home?")
+    event.preventDefault();
+    console.log("hello?");
+    city = $(this).text().trim();
+    APIcalls(); 
+})
+}
+
+function searchClicker() {
+$("#searchbtn").on("click", function(event){
+    event.preventDefault();
+    city = $(this).prev().val().trim()
+    
+    cities.push(city);
+
+    if(cities.length > 8){
+        cities.shift()
+    }
+
+    if (city == ""){
+        return; 
+    }
+    APIcalls();
+    storeCities(); 
+    renderButtons();
+})
+}
+
+function APIcalls(){
+    
+    url = "https://api.openweathermap.org/data/2.5/forecast?q=";    
+    currenturl = "https://api.openweathermap.org/data/2.5/weather?q=";
+    APIkey = "&appid=5ce8439fd4264478d1da0b24a7cd547d";
+    queryurl = url + city + APIkey;
+    current_weather_url = currenturl + city + APIkey; 
+    
+    $("#name_of_city").text("Today's Weather in " + city);
+    $.ajax({
+        url: queryurl,
+        method: "GET",
+        
+    }).then(function(response){
+        var day_number = 0; 
+        
+        for(var i=0; i< response.list.length; i++){
+            
+            if(response.list[i].dt_txt.split(" ")[1] == "15:00:00")
+            {
+                var day = response.list[i].dt_txt.split("-")[2].split(" ")[0];
+                var month = response.list[i].dt_txt.split("-")[1];
+                var year = response.list[i].dt_txt.split("-")[0];
+                $("#" + day_number + "date").text(month + "/" + day + "/" + year); 
+                var temp = Math.round(((response.list[i].main.temp - 273.15) *9/5+32));
+                $("#" + day_number + "five_day_temp").text("Temp: " + temp + String.fromCharCode(176)+"F");
+                $("#" + day_number + "five_day_humidity").text("Humidity: " + response.list[i].main.humidity);
+                $("#" + day_number + "five_day_icon").attr("src", "http://openweathermap.org/img/w/" + response.list[i].weather[0].icon + ".png");
+                console.log(response.list[i].dt_txt.split("-"));
+                console.log(day_number);
+                console.log(response.list[i].main.temp);
+                day_number++; 
+                        }   
+        }
+    });
+
+     $.ajax({
+         url:current_weather_url,
+         method: "GET", 
+     }).then(function(current_data){
+         console.log(current_data);
+         var temp = Math.round(((current_data.main.temp - 273.15) * 9/5 + 32))
+         console.log("The temperature in " + city + " is: " + temp);
+         $("#today_temp").text("Temperature: " + temp + String.fromCharCode(176)+"F");
+         $("#today_humidity").text("Humidity: " + current_data.main.humidity);
+         $("#today_wind_speed").text("Wind Speed: " + current_data.wind.speed);
+         $("#today_icon_div").attr({"src": "http://openweathermap.org/img/w/" + current_data.weather[0].icon + ".png",
+          "height": "100px", "width":"100px"});
+     })
+    
+
+}
+
+
+
+
