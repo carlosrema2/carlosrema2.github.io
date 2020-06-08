@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Favorite Movies</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./style.css">
+ 
+</head>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-5 Name">
+              
+      <br>Carlos A. Reyes<br>
+
+      </div>
+      <div class="col-md-4"></div> 
+
+      <div class="col-md-3" role="toolbar" aria-label="Main Menu">
+
+          <nav class="navbar navbar-expand bg-light navbar-light">
+            <ul class="navbar-nav">
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="./index.html">About|</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./portafolio.html"> Portafolio|</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./contact.html"> Contact</a>
+                </li>
+            </ul>
+          </nav>
+      </div>  
+  </div>
+</div>
+<br>
+<body>
+  <div class="container">
+    <h1>Movie Search</h1>
+    <!-- This form will be where users input data about the movies -->
+    <form id="movie-form">
+      <label for="movie-input">Search for a movie</label>
+      <input type="text" id="movie-input"><br>
+      <!-- This button will trigger our AJAX call -->
+      <input id="find-movie" type="submit" value="Movie Search">
+    </form>
+    <!-- We'll be dumping our JSON contents in here -->
+    <div id="movie-view">
+
+        <table class="table">
+            <thead>
+              <tr>
+                <!-- The scope attribute specifies that this is a header for a column -->
+                <th scope="col">Movie Name</th>
+                <th scope="col">Year</th>
+                <th scope="col">Actors</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+              <tr>
+                <td>Interstellar</td>
+                <td>2014</td>
+                <td>Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow</td>
+              </tr>
+              <!-- Insert additional movie rows here -->
+            </tbody>
+          
+          </table>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      // This .on("click") function will trigger the AJAX Call
+      $("#find-movie").on("click", function(event) {
+        // Preventing the submit button from trying to submit the form
+        // We're optionally using a form so the user may hit Enter to search instead of clicking the button
+        event.preventDefault();
+        // Here we grab the text from the input box
+        var movie = $("#movie-input").val();
+        // Here we construct our URL
+        var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";
+        // Write code between the dashes below to hit the queryURL with $ajax, then take the response data
+        // and display it in the div with an id of movie-view
+        // YOUR CODE GOES IN THESE DASHES. DO NOT MANUALLY EDIT THE HTML ABOVE
+        // =================================================================
+        $.ajax({
+        url: queryURL,
+        method: "GET"
+        }).then(function(response) {
+        console.log(response);
+        $('#div1').html('response:' + response.Title);
+        $('#tbody').append( '<tr><td>' +  response.Title + '</td>'  + '<td>' +  response.Year + '</td>' + '<td>' +  response.Actors + '</td></tr>');
+
+    });
+        // =================================================================
+      });
+    </script>
+  </div>
+</body>
+</html>

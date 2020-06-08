@@ -1,0 +1,51 @@
+input {
+    background: transparent;
+    border: none;
+    padding-left: 3px;
+  }
+
+#page_header{
+    text-align: center;
+    background-color:lightseagreen ;
+    color: white
+
+}
+
+.listbtn{
+    background-color: lightseagreen ;
+    color: white;
+    border-radius: 2px; 
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 60%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border-radius: 15px;
+
+}
+
+.left_div{
+    background-color: #e2d9be;
+    height: 100%; 
+    border-radius: 15px;
+}
+
+.card-body{
+    background-color: lightseagreen;
+    color: white;
+    border-radius: 15px;
+}
+
+#searchbtn{
+    background-color: lightseagreen ;
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif; 
+    border-radius: 15px;  
+}
+.Name{
+    background-color: lightseagreen;
+    color: honeydew;
+    text-align: center;
+    font-size: x-large;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+  }

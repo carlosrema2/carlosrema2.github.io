@@ -1,9 +1,4 @@
-# Weather Dashboard
+# carlosrema2.github.io
+Main Repository
 
-
-## About
-
-This is a basic application that allows the user to input any city and receive information about the current weather, as well as a predicted five-day weather forecast. 
-
-After the user types in a city name, that city is automatically loaded into the user's search history through local storage, and appear as a handy list of buttons that the user can use to keep an eye on favorite cities. The search history buttons are kept to a maximum length of 8 cities, and duplicate entries are automatically filtered. 
-
+The following Web application contains the beginning of the creation of a portfolio, using  Bootstrap grid system for each page has a Nav bar with a navigation menu to the main index, the portfolio to view defferent web pages that will be created with every project during the upcoming 6 months. Bootstrap and the file stile.css determine the layout and configurations of the site.

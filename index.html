@@ -1,91 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Weather Dashboard</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet" type="text/css">
+  <meta charset="UTF-8">
+  <title>Carlos Reyes</title>
   
-   
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 Name">
+                
+        <br>Carlos A. Reyes<br>
+
+        </div>
+        <div class="col-md-4"></div> 
+
+        <div class="col-md-3" role="toolbar" aria-label="Main Menu">
+
+            <nav class="navbar navbar-expand bg-light navbar-light">
+                <ul class="navbar-nav">
+                
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">About|</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="portafolio.html"> Portafolio|</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html"> Contact</a>
+                  </li>
+                </ul>
+              </nav>
+        </div>  
+    </div>
+    <br>
 <body>
-    <header id="page_header" class="container-fluid  pt-3 pb-3 text-center"><h1 class="text-white">Weather Dashboard</h1></header>
-<br>
-    <div class="container-fluid row">
-            <div class="col-3 left_div justify-content-center pt-3">
-                    <div class="search_div mb-4">
-                    <h5 class="justify-content-center pt-2 pl-3">Search by city: </h5>
-                        <form class="form-inline my-2 my-lg-0 mt-3 ml-3">
-                                <input class="form-control mr-sm-2 float-left" type="search" placeholder="Search" id= "search_bar" aria-label="Search">
-                                <button id="searchbtn" class="btn btn-outline-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-                        </form>
-                    </div>
-                    <h5 class="justify-content-center pt-2 pl-3">City Search History: </h5>
-                    <div class="container my-3 col-12" id="searched_cities_container">
+<div class="row card">
+  <div class="col-md-12">
+    <div class="text-left about col-12"><h5><br>About Me<br></h5>
+ </div>
+<hr>
+<div>
+  <img src="./images/CR1.jpg" alt="Carlos Reyes Picture" class="img-thumbnail img" width="200px"> 
+  <p class="gentext mrgP">Carlos has a degree electronic engineering but dedicate most of his time to software development. Today he is seeking for web applications projects where he can utilize well-honed skills in planning, developing and/or testing in order to create state-of-the-art
+    technology solutions for companies or an organizations’ clientele.<p>
+</div>
+</div>
+</div><br>
+    <footer class="container footer">
+       
+           
+              <div class=" footer1 row">
+                <div class="col-md-6">
+                  
+                  <a href="https://www.linkedin.com/in/carlos-a-reyes-688537b4/" title="LinkedIn" class="btn btn-linkedin btn-lg"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a>
 
-                    </div>
-            </div>
-      
-        <div class="today_weather col-9 pt-3">
-                <div class="bg-light p-3">
-                        <h2 class="justify-content-center text-dark" id="name_of_city"></h2>
-                        <div class="row">
-                            <div class="col-6">
-                                <p id="today_temp"></p>
-                                <p id="today_humidity"></p>
-                                <p id="today_wind_speed"></p>
-                                <img id="today_icon_div" src="">
-                            </div>
-                        </div> 
-                </div>  
-
-            <div class="five-day-div bg-light p-3 m-3 w-100">
-                    <div class="bg-light">
-                        <h5 class="text-dark">Five Day Forecast</h5>
-                    </div>
-                <div class="row justify-content-center">
-                    <div id="day0" class="card-body mx-2 my-2">
-                        <h5 id="0date"></h5>
-                        <p id="0five_day_temp"></p>
-                        <p id="0five_day_humidity"></p>
-                        <img id="0five_day_icon" src="">
-                    </div>
-                    <div id="day1" class="card-body mx-2 my-2">
-                            <h5 id="1date"></h5>
-                            <p id="1five_day_temp"></p>
-                            <p id="1five_day_humidity"></p>
-                            <img id="1five_day_icon" src="">
-                    </div>
-                    <div id="day2" class="card-body mx-2 my-2"> 
-                            <h5 id="2date"></h5>
-                            <p id="2five_day_temp"></p>
-                            <p id="2five_day_humidity"></p>
-                            <img id="2five_day_icon" src="">
-                    </div>
-                    <div id="day3" class="card-body mx-2 my-2">
-                            <h5 id="3date"></h5>
-                            <p id="3five_day_temp"></p>
-                            <p id="3five_day_humidity"></p>
-                            <img id="3five_day_icon" src="">
-                    </div>
-                    <div id="day4" class="card-body mx-2 my-2">
-                            <h5 id="4date"></h5>
-                            <p id="4five_day_temp"></p>
-                            <p id="4five_day_humidity"></p>
-                            <img id="4five_day_icon" src="">
-                    </div>
                 </div>
-            </div>
-        </div>
+                
+                <div class="col-md-6">
+                  <br> <br>
+                  <a class="github-button" href="https://github.com/carlosrema2" data-color-scheme="no-preference: light; light: light; dark: light;" data-size="large" data-show-count="true" aria-label="Follow @carlosrema2 on GitHub">Follow @carlosrema2</a>
 
-            </div>
-        </div>
-
-    <script src="https://kit.fontawesome.com/4439e3b362.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="script.js"></script>
+                <br> <br>
+                </div>              
+              </div>
+           
+      
+    </footer>
 </body>
-</html>
+</html> 

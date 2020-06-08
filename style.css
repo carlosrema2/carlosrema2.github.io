@@ -1,44 +1,57 @@
-input {
-    background: transparent;
-    border: none;
-    padding-left: 3px;
+body {
+    background-color:transparent;
+  }
+  .footer1{
+    background-color:grey;
+    color: honeydew;
+    text-align: center;
+  }
+.Name{
+    background-color: lightseagreen;
+    color: honeydew;
+    text-align: center;
+    font-size: x-large;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+  }
+  .card{
+    background-color: whitesmoke;
+    text-align: justify;
+  }
+  .about{
+    color: lightseagreen;
+  }
+  .gentext{
+      color: gray;
+  }
+  .bottomsend{
+    background-color: lightseagreen;
+  }
+  .img {
+    float: left;
+    clear: left;
+  }
+  .mrgP {
+    margin: 20px 40px auto;
   }
 
-#page_header{
+  html {
+    margin: 40px auto;
     text-align: center;
-    background-color:#12C0CB ;
-    color: white
-
-}
-
-.listbtn{
-    background-color: #12C0CB ;
-    color: white;
-    border-radius: 2px; 
-    margin-left: 20%;
-    margin-right: 20%;
-    width: 60%;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    border-radius: 15px;
-
-}
-
-.left_div{
-    background-color: #e2d9be;
-    height: 100%; 
-    border-radius: 15px;
-}
-
-.card-body{
-    background-color: #12C0CB;
-    color: white;
-    border-radius: 15px;
-}
-
-#searchbtn{
-    background-color: #12C0CB ;
-    color: white;
-    font-family: 'Open Sans Condensed', sans-serif; 
-    border-radius: 15px;  
-}
+  }
+    .btn-linkedin {
+      background: lightseagreen;
+      border-radius: 10px;
+      color: #fff;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #084461;
+      margin: 40px 20px auto;
+    }
+    .btn-linkedin:link, .btn-linkedin:visited {
+      color: #fff;
+    }
+    .btn-linkedin:active, .btn-linkedin:hover {
+      background: #0E76A8;
+      color: #fff;
+    }
+    
