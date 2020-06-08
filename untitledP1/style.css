@@ -1,0 +1,258 @@
+body{
+     height: 100%;
+
+ }
+ header {
+		background-image: url("./image.jpeg");
+		background-position: 0 67%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		border-radius: 0 0 85% 85% / 30%;
+		height: 270px;
+		margin-bottom: 30px;
+		overflow: hidden;
+ 		position: relative;
+		text-align: center;
+		width: 100%;
+ }
+
+ .title{
+	 font-size: 38px;
+	 font-weight: bolder;
+	 text-align: center;
+ }
+
+
+ .line{
+	border: solid black 1px;
+	margin-bottom: 5%;
+	margin-top: 3%;
+ }
+
+
+ .map{
+	border: black solid 3px;
+	height: 100vh;
+	margin: 0 auto;
+	margin-left: 15%;
+	margin-top: 7.5%;
+    max-height: 500px;
+	max-width: 500px;
+	width: 100%;
+ }
+
+ .searchBrewey{
+	 float:left;
+ }
+
+ .search{
+	background-color: black;
+	border: black;
+	color: white;
+	float: left;
+ 	font-size: medium;
+	margin-bottom: 10%;
+ }
+ .search:hover{
+	background-color: rgb(48, 48, 48);
+	color: white;
+ }
+ 
+ .image{
+	background-size: cover;
+	border-radius: 0 0 85% 85% / 30%;
+	display: inline-block;  
+	height: 550px;
+	margin-bottom: 50px;
+	overflow: hidden;
+    width: 100%;
+ 	z-index: 999;
+ }
+
+ .headertext{
+ 	color: white;
+	font-weight: bolder;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	}
+	 
+.favoriteButton, .delete{
+	background-color: rgb(0, 0, 0);
+	color: white;
+}
+.favoriteButton:hover, .delete:hover{
+	background-color: rgb(48, 48, 48);
+	color: white;
+}
+
+
+ .searchtext{
+	 font-size: 25px;
+	 font-weight: bolder;
+	 margin-bottom: 2%;
+ }
+
+ /* Unit measure switch formatting is next 7 formatting sections*/
+.switch {
+  height: 36px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+	height: 0;
+	opacity: 0;
+	width: 0;
+
+}
+
+/* The slider */
+.slider {
+	background-color: white;
+	border-radius: 5px;
+	bottom: 0;
+	box-shadow: inset 0 0 10px rgb(168, 168, 168);
+	color: white;
+	cursor: pointer;
+	font-size: 20px;
+	left: 0;
+	margin: 4px 15px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  transition: .7s;
+  -webkit-transition: .7s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "Results";
+  padding-bottom: 30px;
+  height: 28px;
+  width: 50%;
+  left: 4px;
+  bottom: 3px;
+  background-color: black;
+  color: white;
+  -webkit-transition: .7s;
+  transition: .7s;
+  border-radius: 5px;
+}
+
+.slider:hover:before{
+	background-color: rgb(48, 48, 48);
+}
+
+.slider:focus{
+	background-color: rgb(48, 48, 48);
+}
+
+input:checked + .slider {
+  background-color: white;
+}
+
+input:checked + .slider:before {
+  background-color: black;
+  color: white;
+  content: "Wish List";
+  -webkit-transform: translateX(96%);
+  -ms-transform: translateX(96%);
+  transform: translateX(96%);
+}
+
+input:checked + .slider:hover:before{
+	background-color: rgb(48, 48, 48);
+}
+
+ .emptydiv{
+ 	border: solid black 3px;
+	float: left;
+	height: auto;
+	margin: 0 auto;
+	padding:10px;
+	width: 100%;
+ }
+
+ .page-link{
+	background-color: black;
+	color: white;
+  }
+ 
+  .page-link:hover{
+   background-color: rgb(82, 82, 82);
+   color: white;
+  }
+
+ .name{
+	color: black;
+	 font-size: 25px;
+	 font-weight: bolder;
+ }
+
+ .brewery_type{
+	color: black; 
+	 font-size: 15px;
+ }
+
+ .street{
+	color: black;
+	 font-size: 15px;
+ }
+
+ .resultstext{
+	color: black;
+ 	font-size: 25px;
+ 	font-weight: 500;
+ }
+
+ .foot{
+	background-color: white;
+	border: solid black 5px;
+	float: left;
+	font-family: sans-serif;
+	font-size: 14px;
+	height: auto;
+ 	margin-top: 10%;
+ 	width: 100%;
+ }
+
+ .geo{
+	margin-bottom: 15%;
+ }
+ .brew{
+	margin-bottom: 15%;
+ }
+ .mapbox{
+	margin-bottom: 15%;
+ }
+
+ .Carlos{
+	list-style-type: none;
+	margin-bottom: 12%;
+}
+
+.Name{
+    background-color: lightseagreen;
+    color: honeydew;
+    text-align: center;
+    font-size: x-large;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+  }
+  .btn-linkedin {
+	background: lightseagreen;
+	border-radius: 10px;
+	color: #fff;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #084461;
+	margin: 40px 20px auto;
+  }
+  .btn-linkedin:link, .btn-linkedin:visited {
+	color: #fff;
+  }
+  .btn-linkedin:active, .btn-linkedin:hover {
+	background: #0E76A8;
+	color: #fff;
+  }
