@@ -10,7 +10,22 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
-
+<script>
+  function sendMail(str) {
+      var link = "mailto:carlosrema2@gmail.com'&'subject=" + escape("someone contacting you from the Protfolio") + "&body=" + escape(str);
+      location.href = link;
+  }
+  function submit_comment() {
+  var name = document.forms["contact_form"]["name"].value;
+  var Email = document.forms["contact_form"]["email"].value;
+  var comment = document.forms["contact_form"]["comment"].value;
+  
+  if((name !="") && (Email !="") && (comment !="")) {
+    console.log(Email);
+     sendMail(`${name},  <br>${Email}, <br>${comment}`);
+  }
+  }
+  </script>
 <div class="container">
     <div class="row">
         <div class="col-md-5 Name">
@@ -45,20 +60,20 @@
             </div>
                 <hr>
 
-                <form action="#">
+                <form id = "contact_form" action="contact.html">
                     <div class="form-group">
                       <label for="name">Name:</label>
                       <input type="text" class="form-control" placeholder="Your name" id="name">
                     </div>
                     <div class="form-group">
                       <label for="email">Email:</label>
-                      <input type="email" class="form-control" placeholder="Enter your email" id="Email">
+                      <input type="email" class="form-control" placeholder="Enter your email" id="email">
                     </div>
                     <div class="form-group">
                         <label for="Message">Message:</label>
                         <textarea class="form-control" rows="5" id="comment"></textarea>
                       </div>
-                    <button type="submit" class="btn btn-primary bottomsend">Submit</button>
+                    <button type="submit" class="btn btn-primary bottomsend" onclick="submit_comment();">Submit</button>
                   </form>
             </div>
         </div>
