@@ -16,7 +16,7 @@ $(document).ready(function () {
             var type = [];
             city = response.city;
             getBreweries(response.city, type);
-
+            console.log(city);
             mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybG9zcmVtYTIiLCJhIjoiY2s5em5zZjB2MGN2bTNncDYyM2Ruc2FyZSJ9.piNzfWJ9-dRIsVM3le57gg';
             var map = new mapboxgl.Map({
                 container: 'map', // container id
